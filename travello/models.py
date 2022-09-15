@@ -7,7 +7,6 @@ from django.db import models
 class Destination(models.Model):
     name =  models.CharField(max_length=100)
     img =models.ImageField(upload_to = 'static/imgs/place')
-    
-    price =models.IntegerField(default=700)
-    offer = models.BooleanField(default=False)
-    descr = models.TextField(default='description')
+    price =models.IntegerField()
+    offer = models.BooleanField(default = False)
+    descr = models.TextField()

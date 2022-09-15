@@ -325,21 +325,21 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_place">
                         <div class="thumb">
-                            <img src="{{dest.img}}" alt="">
+                            <img src="media/{{dest.img}}" alt="">
                             <a href="#" class="prise">{{dest.price}}</a>
                         </div>
                         <div class="place_info">
 
                             <a href="destination_details.html"><h3>{{dest.name}}</h3></a>
-                            <p>{{dest.description}}{%if dest.offer%}
-                                offer
+                            <p>{{dest.descr}}<br>{%if dest.offer%}
+                                <b style="color: red;">offer 20% off</b>
                                 {%endif%}</p>
                             <div class="rating_days d-flex justify-content-between">
                                 <span class="d-flex justify-content-center align-items-center">
-                                     <i class="fa fa-star"></i> 
-                                     <i class="fa fa-star"></i> 
-                                     <i class="fa fa-star"></i> 
-                                     <i class="fa fa-star"></i> 
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
                                      <i class="fa fa-star"></i>
 
                                      <a href="#">(20 Review)</a>
@@ -353,7 +353,7 @@
                     </div>
                 </div>
                 {% endfor %}
-                
+
             </div>
             <div class="row">
                 <div class="col-lg-12">
