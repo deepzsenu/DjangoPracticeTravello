@@ -1,7 +1,7 @@
 
-import http
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
+from django.contrib import messages
 
 # Create your views here.
 def register(request):
@@ -15,15 +15,20 @@ def register(request):
         password2 = request.POST['password2']
         if password1== password2:
             if User.objects.filter(username=username).exists():
-                print("username allready taken")
+                messages.info(request, "username all ready taken")
+                return redirect('register')
             elif User.objects.filter(email=email).exists():
-                print("email allready taken")
-            user = User.objects.create_user(username=username, password= password1, first_name=first_name, last_name=last_name, email=email)
-            user.save()
-            print('user created')
+                messages.info(request,"email all ready taken")
+                return redirect('register')
+            else:
+                user = User.objects.create_user(username=username, password= password1, first_name=first_name, last_name=last_name, email=email)
+                user.save()
+                # return redirect('/')
         else:
-            print("password not matching")
-        return redirect("/")
+            messages.info(request,"password not matching")
+            return redirect('register')
+        return redirect('/')
+        # return redirect("/")
 
     else:
         return render(request, 'register.html')

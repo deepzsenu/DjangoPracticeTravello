@@ -7,7 +7,7 @@
     <title>Registration</title>
 </head>
 <body>
-    {{pass}}
+    
     <form action="register" method = post>
         {%csrf_token%}
         First Name :
@@ -30,5 +30,10 @@
         <br>
         <input type="submit">
     </form>
+    <div>
+        {% for msg in messages%}
+       <h4> {{msg}}</h4>
+       {%endfor%}
+    </div>
 </body>
 </html>
