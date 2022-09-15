@@ -17,5 +17,5 @@
 - then start server python `manage.py runserver`
 
 
-## That's all nw ejoy the debugging and make some changes.
+## That's all now enjoy the debugging and make some changes.
 
