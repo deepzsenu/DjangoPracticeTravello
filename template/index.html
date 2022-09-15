@@ -321,6 +321,7 @@
             </div>
             <div class="row">
                 {% for dest in dests %}
+
                 <div class="col-lg-4 col-md-6">
                     <div class="single_place">
                         <div class="thumb">
@@ -328,8 +329,11 @@
                             <a href="#" class="prise">{{dest.price}}</a>
                         </div>
                         <div class="place_info">
+
                             <a href="destination_details.html"><h3>{{dest.name}}</h3></a>
-                            <p>{{dest.description}}</p>
+                            <p>{{dest.description}}{%if dest.offer%}
+                                offer
+                                {%endif%}</p>
                             <div class="rating_days d-flex justify-content-between">
                                 <span class="d-flex justify-content-center align-items-center">
                                      <i class="fa fa-star"></i> 
@@ -337,6 +341,7 @@
                                      <i class="fa fa-star"></i> 
                                      <i class="fa fa-star"></i> 
                                      <i class="fa fa-star"></i>
+
                                      <a href="#">(20 Review)</a>
                                 </span>
                                 <div class="days">

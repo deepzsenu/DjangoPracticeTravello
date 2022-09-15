@@ -1,3 +1,4 @@
+from xmlrpc.client import boolean
 from django.db import models
 
 # Create your models here.
@@ -7,4 +8,4 @@ class Destination:
     img:str
     description:str
     price:int
-    
+    offer:boolean
