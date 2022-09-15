@@ -9,9 +9,9 @@ def login(request):
         uname = request.POST['username']
         pwd = request.POST['password']
 
-        usr = auth.authenticate(username=uname, password=pwd)
-        if usr is not None:
-            auth.login(request, usr)
+        user = auth.authenticate(username=uname, password=pwd)
+        if user is not None:
+            auth.login(request, user)
             return redirect('/')
         else:
             messages.info(request,'invalid cretentials')
@@ -48,3 +48,8 @@ def register(request):
 
     else:
         return render(request, 'register.html')
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
