@@ -322,11 +322,11 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_place">
                         <div class="thumb">
-                            <img src="{% static 'img/place/1.png' %}" alt="">
-                            <a href="#" class="prise">$500</a>
+                            <img src={{dest1.img}} alt="">
+                            <a href="#" class="prise">${{dest1.price}}</a>
                         </div>
                         <div class="place_info">
-                            <a href="destination_details.html"><h3>California</h3></a>
+                            <a href="destination_details.html"><h3>{{dest1.name}}</h3></a>
                             <p>United State of America</p>
                             <div class="rating_days d-flex justify-content-between">
                                 <span class="d-flex justify-content-center align-items-center">
